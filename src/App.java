@@ -24,12 +24,7 @@ public class App {
                 }
                 i++;
             }
-            // while (i < e.length() && e.charAt(i) != '@') {
-            //     if (e.charAt(i) != '.') {
-            //         local.append(e.charAt(i));
-            //     }
-            //     i++;
-            // }
+
             // Skip everything after '+' till '@'
             while (i < e.length() && e.charAt(i) != '@') {
                 i++;
