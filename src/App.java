@@ -3,8 +3,7 @@ import java.util.Set;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        String[] test = new String[] { "test.email+alex@leetcode.com", "test.ee.mail.cathy@leetcode.com",
-                "testemailll@lee.tcode.com" };
+        String[] test = new String[] { "test.email+alex@leetcode.com", "test.email@leetcode.com" };
         numUniqueEmails(test);
         System.out.println(numUniqueEmails(test));
     }
@@ -16,7 +15,7 @@ public class App {
         for (String e : emails) {
             StringBuilder local = new StringBuilder();
             int i = 0;
-            while (i < e.length()) {
+            while (i < e.length() && e.charAt(i) != '+' && e.charAt(i) != '@') {
                 if (e.charAt(i) == '+') {
                     break;
                 }
@@ -25,7 +24,12 @@ public class App {
                 }
                 i++;
             }
-
+            // while (i < e.length() && e.charAt(i) != '@') {
+            //     if (e.charAt(i) != '.') {
+            //         local.append(e.charAt(i));
+            //     }
+            //     i++;
+            // }
             // Skip everything after '+' till '@'
             while (i < e.length() && e.charAt(i) != '@') {
                 i++;
